@@ -1,12 +1,12 @@
-import Menu from '@/components/Menu';
+import Game from '@/components/Game';
 
 /**
- * Home Page, shows the main menu of the game
+ * The game page
  */
 const Home = () => {
 	return (
 		<main className="">
-			<Menu />
+			<Game />
 		</main>
 	);
 };

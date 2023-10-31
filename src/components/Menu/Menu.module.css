@@ -1,0 +1,24 @@
+.container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.button {
+	text-decoration: none;
+	color: var(--white);
+	padding: 0.5rem 1rem;
+	border: 2px solid var(--blue);
+	border-bottom-color: var(--white);
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.button:hover {
+	border-color: var(--white);
+	background-color: var(--white);
+	color: var(--black);
+	transition: all 0.2 s ease-out;
+}

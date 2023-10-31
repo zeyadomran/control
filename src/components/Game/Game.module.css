@@ -1,0 +1,116 @@
+.game {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	gap: 4rem;
+	--s: 80px;
+	--r: 1; /* ratio */
+	/* clip-path */
+	--h: 0.25;
+	--v: 0.35;
+	--hc: calc(clamp(0, var(--h), 0.5) * var(--s));
+	--vc: calc(clamp(0, var(--v), 0.5) * var(--s) * var(--r));
+
+	/*margin */
+	--mv: 4px; /* vertical */
+	--mh: calc(var(--mv) + (var(--s) - 2 * var(--hc)) / 2); /* horizontal */
+	/* for the float*/
+	--f: calc(2 * var(--s) * var(--r) + 4 * var(--mv) - 2 * var(--vc) - 2px);
+}
+.container {
+	font-size: 0; /*disable white space between inline block element */
+}
+
+.tile {
+	width: var(--s);
+	margin: var(--mv) var(--mh);
+	height: calc(var(--s) * var(--r));
+	display: inline-block;
+	font-size: initial;
+	clip-path: polygon(
+		var(--hc) 0,
+		calc(100% - var(--hc)) 0,
+		100% var(--vc),
+		100% calc(100% - var(--vc)),
+		calc(100% - var(--hc)) 100%,
+		var(--hc) 100%,
+		0 calc(100% - var(--vc)),
+		0 var(--vc)
+	);
+
+	margin-bottom: calc(var(--mv) - var(--vc));
+	position: relative;
+	color: var(--white);
+	cursor: pointer;
+}
+
+.tile:hover {
+	opacity: 50%;
+}
+
+.display {
+	width: calc(var(--s) / 2);
+	height: calc(var(--s) / 2);
+	border-radius: 50%;
+}
+
+.tile p {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	user-select: none;
+	font-size: 0.6rem;
+}
+
+.neutral {
+	background: var(--black);
+}
+
+.player1 {
+	background: var(--pink);
+}
+
+.player2 {
+	background: var(--green);
+}
+
+.container::before {
+	content: '';
+	width: calc(var(--s) / 2 + var(--mh));
+	float: left;
+	height: 135%;
+	shape-outside: repeating-linear-gradient(
+		#0000 0 calc(var(--f) - 2px),
+		#000 0 var(--f)
+	);
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 0 3rem;
+}
+
+.turn {
+	font-size: 0;
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+
+.turn h1 {
+	font-size: 2rem;
+	color: var(--white);
+}
+
+.score {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	color: var(--white);
+	font-size: 1rem;
+}

@@ -1,21 +1,27 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Rubik } from 'next/font/google';
 import './global.css';
 import Navbar from '@/components/Navbar';
+import Head from 'next/head';
+import Footer from '@/components/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const rubik = Rubik({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: 'Control',
 	description: 'SENG 513 - A2 - Zeyad Omran - 30096692',
 };
 
+/**
+ * Shared layout for all pages
+ */
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body className={rubik.className}>
 				<Navbar />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);
