@@ -14,7 +14,7 @@
 body {
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
-	background-color: var(--blue);
+	background-color: var(--black);
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
@@ -59,6 +59,7 @@ h6 {
 	--blue: #0075c4;
 	--pink: #fc6471;
 	--green: #33ca7f;
+	--purple: #230c33;
 }
 
 main {

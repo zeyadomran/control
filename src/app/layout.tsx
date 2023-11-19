@@ -2,14 +2,13 @@ import type { Metadata } from 'next';
 import { Rubik } from 'next/font/google';
 import './global.css';
 import Navbar from '@/components/Navbar';
-import Head from 'next/head';
 import Footer from '@/components/Footer';
 
 const rubik = Rubik({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: 'Control',
-	description: 'SENG 513 - A2 - Zeyad Omran - 30096692',
+	description: 'SENG 513 - A3 - Zeyad Omran - 30096692',
 };
 
 /**

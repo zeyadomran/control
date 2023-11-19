@@ -36,7 +36,16 @@ const Navbar = () => {
 						<li>
 							Once all tiles are selected, the player with the most tiles wins.
 						</li>
-						<li>If a player has no valid moves, they lose.</li>
+						<li>
+							If a player has no valid moves the game ends and player with most
+							tiles wins.
+						</li>
+						<li>
+							There are 3 powerups in the game; one grants you an extra turn,
+							one lets you destroy the other player&apos;s tile, and one is a
+							bomb that gets control of nearby tiles (including the other
+							players&apos;!).
+						</li>
 					</ul>
 				</div>
 			)}
